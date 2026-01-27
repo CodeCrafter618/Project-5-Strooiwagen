@@ -11,7 +11,8 @@ use League\Route\Router;
 use App\Controllers\HomeController;
 use App\Controllers\InstellingenController;
 use App\Controllers\ProductController;
-use App\Controllers\WegenController;;
+use App\Controllers\WegenController;
+;
 
 
 ini_set("display_errors", 1);
@@ -37,7 +38,7 @@ $router->get("/product/{id:number}", [ProductController::class, "show"]);
 
 $router->get("/wegen", [WegenController::class, "wegen"]);
 
-$router->get("/Instellingen", [InstellingenController::class, "instellingen"]);
+
 
 
 $response = $router->dispatch($request);

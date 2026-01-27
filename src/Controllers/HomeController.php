@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use GuzzleHttp\Psr7\Utils;
+use Nyholm\Psr7\Response as NyholmResponse;
+use Psr\Http\Message\ResponseInterface;
 
 class HomeController
 {
@@ -13,7 +15,7 @@ class HomeController
     {
         $stream = Utils::streamFor("Homepage");
 
-        $response = new Response();
+        $response = new GuzzleResponse();
 
         $response = $response->withBody($stream);
 
