@@ -4,18 +4,26 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use GuzzleHttp\Psr7\Response as GuzzleResponse;
-use GuzzleHttp\Psr7\Utils;
-use Nyholm\Psr7\Response as NyholmResponse;
+
+
+
+
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Psr7\HttpFactory;
+use Nyholm\Psr7\Factory\Psr17Factory;
 
 class WegenController
 {
+
     public function wegen(): ResponseInterface
     {
-        $stream = Utils::streamFor("Hier zie je straks de wegen");
+        //$factory = new HttpFactory();
+        $factory = new Psr17Factory;
 
-        $response = new GuzzleResponse();
+        $stream = $factory->createStream("Hier komen straks de wegen te staan");
+
+
+        $response = $factory->createResponse(200);
 
         $response = $response->withBody($stream);
 
