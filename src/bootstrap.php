@@ -54,6 +54,7 @@ $router->get("/product/{id:number}", [ProductController::class, "show"]);
 
 
 $router->get("/wegen", [WegenController::class, "wegen"]);
+$router->get("/instellingen", [InstellingenController::class, "Instellingen"]);
 
 
 
