@@ -4,7 +4,8 @@
         "httpsoft/http-emitter": "^1.1",
         "league/route": "^6.2",
         "nyholm/psr7": "^1.8",
-        "psr/http-message": "^2.0"
+        "psr/http-message": "^2.0",
+        "php-di/php-di": "^7.1"
     },
 
     "autoload": {

@@ -12,6 +12,11 @@ use App\Controllers\HomeController;
 use App\Controllers\InstellingenController;
 use App\Controllers\ProductController;
 use App\Controllers\WegenController;
+use League\Route\Strategy\ApplicationStrategy;
+use Nyholm\Psr7\Factory\Psr17Factory;
+use Psr\Http\Message\ResponseFactoryInterface;
+use GuzzleHttp\Psr7\HttpFactory;
+use League\Route\Strategy\AbstractStrategy;
 ;
 
 
@@ -23,9 +28,21 @@ require dirname(__DIR__) . "/vendor/autoload.php";
 
 $request = ServerRequest::fromGlobals();
 
+$container = new DI\Container([
+    ResponseFactoryInterface::class => DI\create(HttpFactory::class)
+]);
+
+
+
+
 $router = new Router;
 
+$strategy = new ApplicationStrategy;
+$strategy->setContainer($container);
+$router->setStrategy($strategy);
+
 $router->get("/", [HomeController::class, "index"]);
+
 
 
 
