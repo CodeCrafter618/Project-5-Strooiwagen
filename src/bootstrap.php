@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 
+use Framework\Template\PlatesRenderer;
+use Framework\Template\Renderer;
+use Framework\Template\RendererInterface;
 use GuzzleHttp\Psr7\ServerRequest;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Utils;
@@ -29,7 +32,8 @@ require dirname(__DIR__) . "/vendor/autoload.php";
 $request = ServerRequest::fromGlobals();
 
 $container = new DI\Container([
-    ResponseFactoryInterface::class => DI\create(HttpFactory::class)
+    ResponseFactoryInterface::class => DI\create(HttpFactory::class),
+    RendererInterface::class => DI\create(PlatesRenderer::class)
 ]);
 
 
