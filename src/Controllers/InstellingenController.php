@@ -4,28 +4,22 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 
-use Psr\Http\Message\ResponseFactoryInterface;
-use Psr\Http\Message\ResponseInterface;
-use Framework\Template\RendererInterface;
+use Framework\Controller\AbstractController;
 
-class InstellingenController
+use Psr\Http\Message\ResponseInterface;
+class InstellingenController extends AbstractController
 {
     public function __construct(
-        private ResponseFactoryInterface $factory,
-        private RendererInterface $renderer
+
+        private \DateTime $dt
     ) {
 
     }
     public function instellingen(): ResponseInterface
     {
-        $contents = $this->renderer->render("instellingen/index");
 
-        $stream = $this->factory->createStream($contents);
-
-        $response = $this->factory->createResponse(200);
-
-        $response = $response->withBody($stream);
-
-        return $response;
+        return $this->render("instellingen/index", [
+            "name" => $this->dt->format("l")
+        ]);
     }
 }

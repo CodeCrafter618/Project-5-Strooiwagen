@@ -9,10 +9,10 @@
         "league/plates": "^3.6"
     },
 
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/",
-            "Framework\\":"src/Framework"
-        }
+"autoload": {
+    "psr-4": {
+        "App\\": "src/",
+        "Framework\\": "framework/src/"
     }
+}
 }
