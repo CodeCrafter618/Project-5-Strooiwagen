@@ -2,6 +2,8 @@
 
 <h1>List of Products </h1>
 
+<a href="/product/new">New Product</a>
+
 <table>
 
     <thead>
@@ -16,7 +18,12 @@
 
         <?php foreach ($products as $product): ?>
             <tr>
-                <td><?= $this->e($product->getName()) ?></td>
+                <td>
+                    <a href="/product/<?= $product->getId() ?>">
+
+                        <?= $this->e($product->getName()) ?>
+                    </a>
+                </td>
                 <td><?= $this->e($product->getDescription()) ?></td>
                 <td><?= $product->getSize() ?></td>
             </tr>

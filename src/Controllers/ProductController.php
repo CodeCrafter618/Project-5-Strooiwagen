@@ -4,37 +4,30 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Doctrine\DBAL\DriverManager;
-use Doctrine\ORM\EntityManager;
+
+use Doctrine\ORM\EntityManagerInterface;
 use Framework\Controller\AbstractController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use PDO;
 use App\Entities\Product;
-use Doctrine\ORM\ORMSetup;
+
 
 
 class ProductController extends AbstractController
 {
+    public function __construct(private EntityManagerInterface $em)
+    {
+
+    }
 
     public function index(): ResponseInterface
     {
-        $paths = [dirname(__DIR__) . "/src/Entities"];
-
-        $config = ORMSetup::createAttributeMetadataConfiguration($paths, true);
 
 
-        $params = [
-            "driver" => "pdo_mysql",
-            "host" => "localhost",
-            "dbname" => "zoutstrooimanagment",
-            "user" => "root",
-            "password" => "ServBay.dev"
-        ];
-        $connection = DriverManager::getConnection($params, $config);
 
-        $em = new EntityManager($connection, $config);
-        $repo = $em->getRepository(Product::class);
+
+        $repo = $this->em->getRepository(Product::class);
         $products = $repo->findAll();
 
         return $this->render(
@@ -50,9 +43,39 @@ class ProductController extends AbstractController
 
     public function show(ServerRequestInterface $request, array $args): ResponseInterface
     {
+        $product = $this->em->find(Product::class, $args["id"]);
+
         return $this->render("product/show", [
-            "id" => $args["id"]
+            "product" => $product
         ]);
+
+    }
+
+    public function create(ServerRequestInterface $request): ResponseInterface
+    {
+        if ($request->getMethod() === "POST") {
+
+            $parameters = $request->getParsedBody();
+
+            $product = new Product;
+
+            $product->setName($parameters["name"]);
+            $product->setDescription($parameters["description"]);
+            $product->setSize((int) $parameters["size"]);
+
+
+            $this->em->persist($product);
+
+            $this->em->flush();
+
+
+            return $this->redirect("/product/{$product->getId()}");
+        }
+
+        return $this->render("product/new");
+
+
+
 
     }
 }

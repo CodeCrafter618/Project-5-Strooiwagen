@@ -10,11 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Product
 {
     #[ORM\Id]
+    #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
     private int $id;
 
     #[ORM\Column(type: "string")]
     private string $name;
+
     #[ORM\Column(type: "string")]
     private string $description;
 
