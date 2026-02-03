@@ -3,32 +3,20 @@
 declare(strict_types=1);
 
 
-use Doctrine\ORM\EntityManagerInterface;
-use Framework\Template\PlatesRenderer;
-use Framework\Template\Renderer;
-use Framework\Template\RendererInterface;
+
+use League\Route\Http\Exception\NotFoundException;
 use GuzzleHttp\Psr7\ServerRequest;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Utils;
+
 use HttpSoft\Emitter\SapiEmitter;
 use League\Route\Router;
-use App\Controllers\HomeController;
-use App\Controllers\InstellingenController;
-use App\Controllers\ProductController;
-use App\Controllers\WegenController;
+
 use League\Route\Strategy\ApplicationStrategy;
-use Nyholm\Psr7\Factory\Psr17Factory;
-use Psr\Http\Message\ResponseFactoryInterface;
-use GuzzleHttp\Psr7\HttpFactory;
-use League\Route\Strategy\AbstractStrategy;
-use Doctrine\DBAL\DriverManager;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\ORMSetup;
+
 use Dotenv\Dotenv;
-;
 
 
-ini_set("display_errors", 1);
+
+
 
 define("APP_ROOT", dirname(__DIR__));
 
@@ -37,6 +25,11 @@ require APP_ROOT . "/vendor/autoload.php";
 $dotenv = Dotenv::createImmutable(APP_ROOT);
 $dotenv->load();
 
+$env = $_ENV["APP_ENV"] ?? "prod";
+
+require $env === "dev"
+    ? APP_ROOT . "/config/errors_dev.php"
+    : APP_ROOT . "/config/errors_prod.php";
 
 $request = ServerRequest::fromGlobals();
 $builder = new DI\ContainerBuilder;
@@ -55,7 +48,26 @@ $router->setStrategy($strategy);
 $routes = require APP_ROOT . "/config/routes.php";
 $routes($router);
 
-$response = $router->dispatch($request);
+try {
+    $response = $router->dispatch($request);
+
+
+} catch (NotFoundException $e) {
+
+    http_response_code(404);
+
+    if ($env === "dev") {
+        throw $e;
+    } else {
+
+        require APP_ROOT . "/views/404.html";
+        exit;
+    }
+
+}
+
+
+
 
 $emitter = new SapiEmitter();
 
