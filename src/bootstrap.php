@@ -24,38 +24,23 @@ use League\Route\Strategy\AbstractStrategy;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
+use Dotenv\Dotenv;
 ;
 
 
 ini_set("display_errors", 1);
 
+define("APP_ROOT", dirname(__DIR__));
 
-require dirname(__DIR__) . "/vendor/autoload.php";
 
+require APP_ROOT . "/vendor/autoload.php";
+$dotenv = Dotenv::createImmutable(APP_ROOT);
+$dotenv->load();
 
 
 $request = ServerRequest::fromGlobals();
 $builder = new DI\ContainerBuilder;
-$builder->addDefinitions([
-    ResponseFactoryInterface::class => DI\create(HttpFactory::class),
-    RendererInterface::class => DI\create(PlatesRenderer::class),
-    EntityManagerInterface::class => function () {
-
-        $paths = [dirname(__DIR__) . "/src/Entities"];
-
-        $config = ORMSetup::createAttributeMetadataConfiguration($paths, true);
-        $params = [
-            "driver" => "pdo_mysql",
-            "host" => "localhost",
-            "dbname" => "zoutstrooimanagment",
-            "user" => "root",
-            "password" => "ServBay.dev"
-        ];
-        $connection = DriverManager::getConnection($params, $config);
-
-        return new EntityManager($connection, $config);
-    }
-]);
+$builder->addDefinitions(APP_ROOT . "/config/definitions.php");
 
 $builder->useAttributes(true);
 $container = $builder->build();
@@ -67,23 +52,8 @@ $strategy = new ApplicationStrategy;
 $strategy->setContainer($container);
 $router->setStrategy($strategy);
 
-$router->get("/", [HomeController::class, "index"]);
-
-
-
-
-
-$router->get("/products", [ProductController::class, "index"]);
-
-$router->get("/product/{id:number}", [ProductController::class, "show"]);
-
-
-
-$router->get("/wegen", [WegenController::class, "wegen"]);
-$router->get("/instellingen", [InstellingenController::class, "Instellingen"]);
-
-
-$router->map(["GET", "POST"], "/product/new", [ProductController::class, "create"]);
+$routes = require APP_ROOT . "/config/routes.php";
+$routes($router);
 
 $response = $router->dispatch($request);
 
