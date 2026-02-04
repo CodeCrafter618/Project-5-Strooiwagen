@@ -1,0 +1,67 @@
+/* Algemene stijl */
+body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; }
+
+.header-yellow { 
+    background: #ffde59; 
+    padding: 20px; 
+    text-align: center; 
+    position: relative; 
+    border-bottom: 2px solid #000; 
+}
+
+/* Tabel stijl */
+.weg-container { margin-bottom: 40px; display: flex; justify-content: center; }
+
+.weg-table { 
+    border-collapse: collapse; 
+    border: 3px solid #8a70ff; 
+    width: 90%; 
+    background: white; 
+}
+
+.weg-table th, .weg-table td { 
+    border: 1px solid #8a70ff; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+/* De onzichtbare invulvelden */
+.weg-table input { 
+    border: none; 
+    background: transparent; 
+    text-align: center; 
+    width: 100%; 
+    outline: none; 
+    font-size: 16px; 
+}
+
+.weg-table input:focus { background: #fdfbff; }
+
+/* De kleine streepjes onder de temperatuur in de kop */
+.h-in { 
+    font-weight: bold; 
+    width: 40px !important; 
+    border-bottom: 1px dashed #8a70ff !important; 
+}
+
+/* Knoppen */
+.btn-del { background: none; border: none; cursor: pointer; font-size: 22px; }
+
+.plus-btn { 
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    background: #ffde59; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none; 
+    font-size: 40px; 
+    color: black; 
+    font-weight: bold; 
+    border: 3px solid #8a70ff; 
+    box-shadow: 4px 4px 0px #8a70ff; 
+}
