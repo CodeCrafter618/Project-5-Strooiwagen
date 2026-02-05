@@ -14,14 +14,20 @@ class Weg
     #[ORM\Id] #[ORM\GeneratedValue] #[ORM\Column(type: "integer")]
     private int $id;
 
-    #[ORM\Column(type: "string")]
+    #[ORM\Column(type: "string", unique: true)]
     private string $naam;
 
     #[ORM\Column(type: "string")]
     private string $locatie;
 
     #[ORM\Column(type: "integer")]
+    private int $weglengte = 0;
+
+    #[ORM\Column(type: "integer")]
     private int $strooiduur;
+
+    #[ORM\Column(type: "float", nullable: true)]
+    private ?float $huidige_temperatuur = null;
 
     #[ORM\OneToMany(mappedBy: "weg", targetEntity: Weersomstandigheid::class, cascade: ["persist", "remove"])]
     private Collection $weersomstandigheden;
@@ -31,7 +37,6 @@ class Weg
         $this->weersomstandigheden = new ArrayCollection();
     }
 
-    // Getters & Setters
     public function getId(): int
     {
         return $this->id;
@@ -52,6 +57,14 @@ class Weg
     {
         $this->locatie = $locatie;
     }
+    public function getWeglengte(): int
+    {
+        return $this->weglengte;
+    }
+    public function setWeglengte(int $weglengte): void
+    {
+        $this->weglengte = $weglengte;
+    }
     public function getStrooiduur(): int
     {
         return $this->strooiduur;
@@ -59,6 +72,14 @@ class Weg
     public function setStrooiduur(int $strooiduur): void
     {
         $this->strooiduur = $strooiduur;
+    }
+    public function getHuidigeTemperatuur(): ?float
+    {
+        return $this->huidige_temperatuur;
+    }
+    public function setHuidigeTemperatuur(?float $temp): void
+    {
+        $this->huidige_temperatuur = $temp;
     }
     public function getWeersomstandigheden(): Collection
     {

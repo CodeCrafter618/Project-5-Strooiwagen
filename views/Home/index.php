@@ -23,16 +23,7 @@ if (stripos($alarmTekst, 'geel') !== false) {
 }
 ?>
 
-<nav class="navbar-container">
-    <div class="logo-section">
-        <img src="logo_sudwest_fryslan.png" alt="Gemeente Súdwest-Fryslân">
-    </div>
 
-    <div class="nav-links">
-        <a href="">Home</a>
-        <a href="wegen">Wegen beheer</a>
-    </div>
-</nav>
 
 <h1 class="hoofd-titel">Aantal Strooiwagens</h1>
 <h2 class="cijfer"> 1 </h2>
@@ -71,7 +62,9 @@ if (stripos($alarmTekst, 'geel') !== false) {
 </div>
 
 
-<h2 class="datum"><?= date('d-m-Y') ?></h2>
+<h2 class="datum">
+    <?= date('d-m-Y') ?>
+</h2>
 
 <hr style="border: 0; border-top: 4px solid #737372; width: 100%; margin: 20px 0;">
 
@@ -79,6 +72,10 @@ if (stripos($alarmTekst, 'geel') !== false) {
 
 <div class="analyse-sectie">
     <h2>Analyse</h2>
-    <h3><?php echo $weer['lkop']; ?></h3>
-    <p><?php echo $weer['ltekst']; ?></p>
+    <h3>
+        <?php echo $weer['lkop']; ?>
+    </h3>
+    <p>
+        <?php echo $weer['ltekst']; ?>
+    </p>
 </div>
