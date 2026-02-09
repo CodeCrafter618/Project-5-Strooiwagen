@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-
+date_default_timezone_set("Europe/Amsterdam");
 
 use League\Route\Http\Exception\NotFoundException;
 use GuzzleHttp\Psr7\ServerRequest;
@@ -72,3 +72,4 @@ try {
 $emitter = new SapiEmitter();
 
 $emitter->emit($response);
+

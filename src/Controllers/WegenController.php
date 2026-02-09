@@ -31,8 +31,25 @@ class WegenController extends AbstractController
 
     private function fetchTemp(string $loc): ?float
     {
-        $data = @file_get_contents("https://weerlive.nl/api/weerlive_api_v2.php?key=3184bf7422&locatie=" . urlencode($loc));
-        $json = json_decode($data, true);
+        // Haal de key op uit de env
+        $apiKey = $_ENV['WEERLIVE_API_KEY'];
+
+        // Bouw de URL op met de key en de locatie variabele
+        $url = "https://weerlive.nl/api/weerlive_api_v2.php?key=" . $apiKey . "&locatie=" . urlencode($loc);
+        // Haal de data op
+        $response = @file_get_contents($url);
+
+        if ($response === false || trim($response) === '') {
+            error_log('WegenController::fetchTemp - empty response for URL: ' . $url);
+            return null;
+        }
+
+        $json = json_decode($response, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log('WegenController::fetchTemp - json_decode error: ' . json_last_error_msg());
+            return null;
+        }
+
         return isset($json['liveweer'][0]['temp']) ? (float) $json['liveweer'][0]['temp'] : null;
     }
 

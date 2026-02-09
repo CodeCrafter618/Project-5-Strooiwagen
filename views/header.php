@@ -6,6 +6,6 @@
 
     <div class="nav-links">
         <a href="/">Home</a>
-        <a href="wegen">Wegen beheer</a>
+        <a href="/wegen">Wegen beheer</a>
     </div>
 </nav>

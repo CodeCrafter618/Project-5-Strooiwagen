@@ -4,8 +4,8 @@
             &copy;
             <?= date('Y') ?>
             <span class="footer-accent">Súdwest-Fryslân</span>
-            | Wegenbeheer Paneel
-            | 📍
+            | Zoutstrooimanagement
+            | ⏱️
             <?= date('d-m-Y') ?>
         </p>
     </div>

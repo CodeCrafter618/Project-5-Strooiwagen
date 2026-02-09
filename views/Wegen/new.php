@@ -19,9 +19,10 @@
         width: 450px;
         margin: 50px auto;
         padding: 30px;
-        border: 3px solid #8a70ff;
+        border: 3px solid #000000;
+        ;
         border-radius: 10px;
-        box-shadow: 10px 10px 0px #8a70ff;
+
     }
 
     .form-box label {
@@ -65,9 +66,7 @@
     }
 </style>
 
-<div class="header-geel">
-    <h1 style="margin: 0;">Nieuwe Weg Toevoegen</h1>
-</div>
+
 
 <div class="form-box">
     <form method="POST">
