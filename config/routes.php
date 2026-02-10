@@ -12,7 +12,6 @@ return function (Router $router) {
     $router->get("/product/{id:number}", [ProductController::class, "show"]);
     $router->map(["GET", "POST"], "/product/new", [ProductController::class, "create"]);
 
-    // Routes voor Wegen
     $router->get("/wegen", [WegenController::class, "index"]);
     $router->map(["GET", "POST"], "/wegen/new", [WegenController::class, "create"]);
     $router->post("/wegen/edit/{id:number}", [WegenController::class, "update"]);

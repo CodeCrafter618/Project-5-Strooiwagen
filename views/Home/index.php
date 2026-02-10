@@ -79,12 +79,10 @@ if (stripos($alarmTekst, 'geel') !== false) {
     function updateTijd() {
         const nu = new Date();
 
-        // Formateer datum: dd-mm-jjjj
         const datum = nu.getDate().toString().padStart(2, '0') + '-' +
             (nu.getMonth() + 1).toString().padStart(2, '0') + '-' +
             nu.getFullYear();
 
-        // Formateer tijd: uu:mm:ss
         const tijd = nu.getHours().toString().padStart(2, '0') + ':' +
             nu.getMinutes().toString().padStart(2, '0') + ':' +
             nu.getSeconds().toString().padStart(2, '0');
@@ -92,11 +90,10 @@ if (stripos($alarmTekst, 'geel') !== false) {
         document.getElementById('live-klok').innerHTML = datum + ' ' + tijd;
     }
 
-    // Voer de functie elke 1000 milliseconden (1 seconde) uit
     setInterval(updateTijd, 1000);
 </script>
 
-<hr style="border: 0; border-top: 4px solid #737372; width: 100%; margin: 20px 0;">
+<hr class="section-divider">
 
 
 

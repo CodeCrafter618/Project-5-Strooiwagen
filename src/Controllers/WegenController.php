@@ -31,12 +31,9 @@ class WegenController extends AbstractController
 
     private function fetchTemp(string $loc): ?float
     {
-        // Haal de key op uit de env
         $apiKey = $_ENV['WEERLIVE_API_KEY'];
 
-        // Bouw de URL op met de key en de locatie variabele
         $url = "https://weerlive.nl/api/weerlive_api_v2.php?key=" . $apiKey . "&locatie=" . urlencode($loc);
-        // Haal de data op
         $response = @file_get_contents($url);
 
         if ($response === false || trim($response) === '') {
@@ -56,29 +53,22 @@ class WegenController extends AbstractController
     public function update(ServerRequestInterface $request, array $args): ResponseInterface
     {
         $p = $request->getParsedBody();
-        /** @var Weg|null $weg */
         $weg = $this->em->find(Weg::class, $args["id"]);
 
         if ($weg) {
-            // Basis gegevens updaten
             $weg->setNaam($p['naam']);
             $weg->setLocatie($p['locatie']);
             $weg->setWeglengte((int) $p['weglengte']);
 
-            // Verwijder ' min' als die in de input zit (vanwege je view formatting)
             $duur = (int) str_replace(' min', '', (string) $p['strooiduur']);
             $weg->setStrooiduur($duur);
 
-            // Haal de huidige drempels op en verwijder ze
             foreach ($weg->getWeersomstandigheden() as $ws) {
                 $this->em->remove($ws);
             }
 
-            // Belangrijk: eerst flushen om ruimte te maken voor de nieuwe drempels 
-            // of de collectie legen om duplicate key errors te voorkomen
             $this->em->flush();
 
-            // Voeg de 3 nieuwe drempels toe vanuit het formulier
             for ($i = 1; $i <= 3; $i++) {
                 if (isset($p["t$i"]) && isset($p["f$i"])) {
                     $ws = new Weersomstandigheid();

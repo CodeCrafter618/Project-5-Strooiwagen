@@ -1,113 +1,19 @@
-<?php $this->layout("layout", ["title" => "Wegenbeheer"]) ?>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #fff;
-        margin: 0;
-    }
-
-    .weg-tabel-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 40px 0;
-    }
-
-    .weg-tabel {
-        border-collapse: collapse;
-        width: 95%;
-        max-width: 1300px;
-        border: 2px solid #8A99FF;
-    }
-
-    /* Header styling */
-    .weg-tabel thead th {
-        border: 2px solid #8A99FF;
-        padding: 20px 10px;
-        text-align: center;
-        color: #333;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #fff;
-    }
-
-    /* Cell styling */
-    .weg-tabel tbody td {
-        border: 2px solid #8A99FF;
-        padding: 15px 10px;
-        text-align: center;
-        color: #333;
-        font-size: 15px;
-    }
-
-    /* Input container voor gradenteken */
-    .input-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2px;
-    }
-
-    /* Input styling */
-    .weg-tabel input {
-        width: 100%;
-        border: none;
-        text-align: center;
-        font-size: 15px;
-        outline: none;
-        background: transparent;
-        padding: 8px 0;
-    }
-
-    /* Specifieke breedte voor getal-inputs om gradenteken er strak naast te houden */
-    .input-wrapper input {
-        width: 40px;
-    }
-
-    .weg-tabel input:focus {
-        background-color: #f0f2ff;
-        border-radius: 4px;
-    }
-
-    .col-temp-edit {
-        width: 120px;
-    }
-
-    .temp-badge {
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    /* Acties kolom */
-    .btn-del {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        font-size: 22px;
-        transition: transform 0.2s;
-        display: inline-block;
-    }
-
-    .btn-del:hover {
-        transform: scale(1.2);
-    }
-</style>
+<?php $this->layout("layout", ["title" => "Wegenbeheer", "bodyClass" => "page-wegen-index"]) ?>
 
 <?php foreach ($wegen as $weg):
     $ws = $weg->getWeersomstandigheden()->toArray();
     usort($ws, fn($a, $b) => $b->getTemperatuur() <=> $a->getTemperatuur());
     ?>
     <div class="weg-tabel-wrapper">
-        <form action="/wegen/edit/<?= $weg->getId() ?>" method="POST" style="width:100%; max-width:1300px;">
+        <form action="/wegen/edit/<?= $weg->getId() ?>" method="POST" class="weg-form">
             <table class="weg-tabel">
                 <thead>
                     <tr>
-                        <th style="width: 200px;">Naam</th>
-                        <th style="width: 200px;">Locatie</th>
-                        <th style="width: 120px;">Duur</th>
-                        <th style="width: 120px;">Weglengte</th>
-                        <th style="width: 90px;">Nu</th>
+                        <th class="weg-col-naam">Naam</th>
+                        <th class="weg-col-locatie">Locatie</th>
+                        <th class="weg-col-duur">Duur</th>
+                        <th class="weg-col-weglengte">Weglengte</th>
+                        <th class="weg-col-nu">Nu</th>
 
                         <th class="col-temp-edit">
                             <div class="input-wrapper">
@@ -128,7 +34,7 @@
                             </div>
                         </th>
 
-                        <th style="width: 120px;">Acties</th>
+                        <th class="weg-col-acties">Acties</th>
                     </tr>
                 </thead>
                 <tbody>

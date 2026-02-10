@@ -21,6 +21,7 @@ body {
     font-family: "Arimo-Regular", Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
@@ -215,10 +216,270 @@ main {
     width: 100%;
     position: relative;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .footer-content {
     text-align: center;
+}
+
+/* --- 10. VIEW-SPECIFIC STYLES (MOVED FROM VIEWS) --- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 12px 10px;
+}
+
+.col-naam {
+    width: 28%;
+}
+
+.col-locatie {
+    width: 20%;
+}
+
+body.page-wegen-index {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+}
+
+body.page-wegen-new {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.section-divider {
+    border: 0;
+    border-top: 4px solid #737372;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.weg-tabel-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.weg-form {
+    width: 100%;
+    max-width: 1300px;
+}
+
+.weg-tabel {
+    border-collapse: collapse;
+    width: 95%;
+    max-width: 1300px;
+    border: 2px solid #8A99FF;
+}
+
+.weg-tabel thead th {
+    border: 2px solid #8A99FF;
+    padding: 20px 10px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+.weg-tabel tbody td {
+    border: 2px solid #8A99FF;
+    padding: 15px 10px;
+    text-align: center;
+    color: #333;
+    font-size: 15px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.weg-tabel input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    background: transparent;
+    padding: 8px 0;
+}
+
+.input-wrapper input {
+    width: 40px;
+}
+
+.weg-tabel input:focus {
+    background-color: #f0f2ff;
+    border-radius: 4px;
+}
+
+.col-temp-edit {
+    width: 120px;
+}
+
+.temp-badge {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-del {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 22px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.btn-del:hover {
+    transform: scale(1.2);
+}
+
+.weg-col-naam {
+    width: 200px;
+}
+
+.weg-col-locatie {
+    width: 200px;
+}
+
+.weg-col-duur {
+    width: 120px;
+}
+
+.weg-col-weglengte {
+    width: 120px;
+}
+
+.weg-col-nu {
+    width: 90px;
+}
+
+.weg-col-acties {
+    width: 120px;
+}
+
+.header-geel {
+    background-color: #ffde59;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+
+.form-box {
+    background: white;
+    width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.form-box label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-divider {
+    margin: 20px 0;
+    border: 1px solid #eee;
+}
+
+.temp-freq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.temp-freq-grid--header {
+    font-size: 12px;
+    color: #666;
+}
+
+.knop-opslaan {
+    background-color: #ffde59;
+    width: 100%;
+    padding: 15px;
+    font-weight: bold;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.knop-opslaan:hover {
+    background-color: #e5c750;
+}
+
+.form-error {
+    color: red;
+    margin: 10px 0;
+}
+
+.weg-edit-form {
+    max-width: 500px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row--spaced {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .footer-content p {
@@ -237,35 +498,4 @@ main {
     all: unset;
     cursor: pointer;
     font-size: 20px;
-}
-
-/* Zorgt dat de body de hele hoogte van het scherm vult */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Zet de body in flex-modus */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Main vult alle beschikbare ruimte op, waardoor de footer omlaag gaat */
-main {
-    flex: 1 0 auto;
-}
-
-/* De footer styling */
-.footer-onder {
-    flex-shrink: 0; /* Zorgt dat de footer niet inkrimpt */
-    background-color: #fff;
-    border-top: 3px solid #8a70ff;
-    padding: 20px 0;
-    width: 100%;
-}
-
-.footer-content {
-    text-align: center;
 }
