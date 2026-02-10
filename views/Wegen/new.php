@@ -21,7 +21,7 @@
 
         <div class="temp-freq-grid temp-freq-grid--header">
             <span>Temperatuur (°C)</span>
-            <span>Frequentie (Efficiency)</span>
+            <span>Frequentie</span>
         </div>
 
         <?php for ($i = 1; $i <= 3; $i++): ?>
@@ -31,6 +31,10 @@
             </div>
         <?php endfor; ?>
 
-        <button type="submit" class="knop-opslaan">Opslaan en Terug</button>
+        <a href="/wegen"
+            onclick="return confirm('Weet je zeker dat je terug wilt gaan? Niet opgeslagen wijzigingen gaan verloren.');">
+            <button type="button" class="knop-opslaan">Terug naar wegenbeheer</button>
+        </a>
+        <button type="submit" class="knop-opslaan">Opslaan</button>
     </form>
 </div>
