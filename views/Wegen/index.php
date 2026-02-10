@@ -1,5 +1,9 @@
 <?php $this->layout("layout", ["title" => "Wegenbeheer", "bodyClass" => "page-wegen-index"]) ?>
 
+<?php if (isset($_GET['error']) && $_GET['error'] === 'exists'): ?>
+    <p class="form-error">Deze weg bestaat al.</p>
+<?php endif; ?>
+
 <?php foreach ($wegen as $weg):
     $ws = $weg->getWeersomstandigheden()->toArray();
     usort($ws, fn($a, $b) => $b->getTemperatuur() <=> $a->getTemperatuur());
@@ -40,13 +44,13 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="naam" value="<?= $this->e($weg->getNaam()) ?>"
-                                onblur="this.form.submit()"></td>
+                            onblur="this.form.submit()"></td>
                         <td><input type="text" name="locatie" value="<?= $this->e($weg->getLocatie()) ?>"
-                                onblur="this.form.submit()"></td>
-                        <td><input type="text" name="strooiduur" value="<?= $weg->getStrooiduur() ?> min"
-                                onblur="this.form.submit()"></td>
-                        <td><input type="text" name="weglengte" value="<?= $weg->getWeglengte() ?> km"
-                                onblur=" this.form.submit()"></td>
+                            pattern="[^0-9]*" title="Geen cijfers toegestaan" onblur="this.form.submit()"></td>
+                        <td><input type="number" name="strooiduur" value="<?= $weg->getStrooiduur() ?>" min="0" step="1"
+                            onblur="this.form.submit()"></td>
+                        <td><input type="number" name="weglengte" value="<?= $weg->getWeglengte() ?>" min="0" step="1"
+                            onblur=" this.form.submit()"></td>
                         <td>
                             <span class="temp-badge">
                                 <?= $weg->getHuidigeTemperatuur() !== null ? number_format($weg->getHuidigeTemperatuur(), 1) : '--' ?>°C

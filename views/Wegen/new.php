@@ -1,14 +1,15 @@
 <?php $this->layout("layout", ["title" => "Nieuwe Weg", "bodyClass" => "page-wegen-new"]) ?>
-
-
-
 <div class="form-box">
+    <?php if (isset($_GET['error']) && $_GET['error'] === 'exists'): ?>
+        <p class="form-error">Deze weg bestaat al.</p>
+    <?php endif; ?>
     <form method="POST">
         <label>Naam van de weg:</label>
         <input type="text" name="naam" placeholder="Bijv. A7" required>
 
         <label>Locatie (voor temperatuur):</label>
-        <input type="text" name="locatie" placeholder="Bijv. Sneek" required>
+        <input type="text" name="locatie" placeholder="Bijv. Sneek" required pattern="[^0-9]*"
+            title="Geen cijfers toegestaan">
 
         <label>Weglengte (in KM):</label>
         <input type="number" step="1" name="weglengte" placeholder="Bijv. 20" required>
@@ -27,7 +28,7 @@
         <?php for ($i = 1; $i <= 3; $i++): ?>
             <div class="temp-freq-grid">
                 <input type="number" name="t<?= $i ?>" value="<?= ($i - 1) * -5 ?>" title="Drempel Temperatuur">
-                <input type="number" name="f<?= $i ?>" placeholder="Aantal wagens" required>
+                <input type="number" name="f<?= $i ?>" placeholder="Aantal keer" required>
             </div>
         <?php endfor; ?>
 

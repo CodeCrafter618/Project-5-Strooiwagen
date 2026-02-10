@@ -519,3 +519,9 @@ body.page-wegen-new {
     cursor: pointer;
     font-size: 20px;
 }
+
+.form-error{
+  text-align: center;
+  font-weight: bold;
+  
+}

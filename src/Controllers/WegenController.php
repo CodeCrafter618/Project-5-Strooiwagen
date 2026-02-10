@@ -50,14 +50,30 @@ class WegenController extends AbstractController
         return isset($json['liveweer'][0]['temp']) ? (float) $json['liveweer'][0]['temp'] : null;
     }
 
+    private function containsDigits(string $value): bool
+    {
+        return preg_match('/\d/', $value) === 1;
+    }
+
     public function update(ServerRequestInterface $request, array $args): ResponseInterface
     {
         $p = $request->getParsedBody();
+        $naam = trim((string) ($p['naam'] ?? ''));
+        $locatie = trim((string) ($p['locatie'] ?? ''));
+
+        if ($naam === '' || $locatie === '' || $this->containsDigits($locatie)) {
+            return $this->redirect("/wegen?error=invalid");
+        }
         $weg = $this->em->find(Weg::class, $args["id"]);
 
+        $existing = $this->em->getRepository(Weg::class)->findOneBy(['naam' => $naam]);
+        if ($existing && $weg && $existing->getId() !== $weg->getId()) {
+            return $this->redirect("/wegen?error=exists");
+        }
+
         if ($weg) {
-            $weg->setNaam($p['naam']);
-            $weg->setLocatie($p['locatie']);
+            $weg->setNaam($naam);
+            $weg->setLocatie($locatie);
             $lengte = (int) str_replace(' km', '', (string) $p['weglengte']);
             $weg->setWeglengte($lengte);
 
@@ -101,17 +117,23 @@ class WegenController extends AbstractController
     {
         if ($request->getMethod() === "POST") {
             $p = $request->getParsedBody();
+            $naam = trim((string) ($p['naam'] ?? ''));
+            $locatie = trim((string) ($p['locatie'] ?? ''));
 
-            if ($this->em->getRepository(Weg::class)->findOneBy(['naam' => $p['naam']])) {
+            if ($naam === '' || $locatie === '' || $this->containsDigits($locatie)) {
+                return $this->redirect("/wegen/new?error=invalid");
+            }
+
+            if ($this->em->getRepository(Weg::class)->findOneBy(['naam' => $naam])) {
                 return $this->redirect("/wegen/new?error=exists");
             }
 
             $weg = new Weg();
-            $weg->setNaam($p['naam']);
-            $weg->setLocatie($p['locatie']);
+            $weg->setNaam($naam);
+            $weg->setLocatie($locatie);
             $weg->setWeglengte((int) $p['weglengte']);
             $weg->setStrooiduur((int) $p['strooiduur']);
-            $weg->setHuidigeTemperatuur($this->fetchTemp($p['locatie']));
+            $weg->setHuidigeTemperatuur($this->fetchTemp($locatie));
 
             $this->em->persist($weg);
 
