@@ -58,7 +58,8 @@ class WegenController extends AbstractController
         if ($weg) {
             $weg->setNaam($p['naam']);
             $weg->setLocatie($p['locatie']);
-            $weg->setWeglengte((int) $p['weglengte']);
+            $lengte = (int) str_replace(' km', '', (string) $p['weglengte']);
+            $weg->setWeglengte($lengte);
 
             $duur = (int) str_replace(' min', '', (string) $p['strooiduur']);
             $weg->setStrooiduur($duur);
@@ -74,7 +75,8 @@ class WegenController extends AbstractController
                     $ws = new Weersomstandigheid();
                     $ws->setWeg($weg);
                     $ws->setTemperatuur((int) $p["t$i"]);
-                    $ws->setFrequentie((int) $p["f$i"]);
+                    $freq = (int) str_replace(' x gestrooid worden', '', (string) $p["f$i"]);
+                    $ws->setFrequentie($freq);
                     $this->em->persist($ws);
                 }
             }

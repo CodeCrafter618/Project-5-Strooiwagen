@@ -45,8 +45,8 @@
                                 onblur="this.form.submit()"></td>
                         <td><input type="text" name="strooiduur" value="<?= $weg->getStrooiduur() ?> min"
                                 onblur="this.form.submit()"></td>
-                        <td><input type="number" name="weglengte" value="<?= $weg->getWeglengte() ?>"
-                                onblur="this.form.submit()"></td>
+                        <td><input type="text" name="weglengte" value="<?= $weg->getWeglengte() ?> km"
+                                onblur=" this.form.submit()"></td>
                         <td>
                             <span class="temp-badge">
                                 <?= $weg->getHuidigeTemperatuur() !== null ? number_format($weg->getHuidigeTemperatuur(), 1) : '--' ?>°C

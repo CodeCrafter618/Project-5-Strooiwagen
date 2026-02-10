@@ -304,6 +304,14 @@ body.page-wegen-new {
     gap: 2px;
 }
 
+.weg-unit-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    white-space: nowrap;
+}
+
 .weg-tabel input {
     width: 100%;
     border: none;
@@ -316,6 +324,18 @@ body.page-wegen-new {
 
 .input-wrapper input {
     width: 40px;
+}
+
+.weg-unit-wrapper input {
+    width: 6ch;
+    padding: 0;
+    text-align: right;
+}
+
+.weg-unit {
+    font-size: 14px;
+    color: #333;
+    margin-left: 2px;
 }
 
 .weg-tabel input:focus {
