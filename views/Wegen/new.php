@@ -18,7 +18,7 @@
         <input type="number" name="strooiduur" placeholder="Bijv. 15" required>
 
         <hr class="form-divider">
-        <p><strong>Drempels (Temperatuur & Frequentie):</strong></p>
+        <p><strong>Temperatuur & Frequentie:</strong></p>
 
         <div class="temp-freq-grid temp-freq-grid--header">
             <span>Temperatuur (°C)</span>

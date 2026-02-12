@@ -56,7 +56,7 @@
                     <tr>
                         <th>Naam</th>
                         <th>Locatie</th>
-                        <th>Duur</th>
+                        <th>Duur (min)</th>
                         <th><input type="number" name="t1" value="<?= $ws[0]?->getTemperatuur() ?? 0 ?>"
                                 onblur="this.form.submit()" style="width:50px;text-align:center;"> °C</th>
                         <th><input type="number" name="t2" value="<?= $ws[1]?->getTemperatuur() ?? -5 ?>"

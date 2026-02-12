@@ -15,7 +15,7 @@
                     <tr>
                         <th class="weg-col-naam">Naam</th>
                         <th class="weg-col-locatie">Locatie</th>
-                        <th class="weg-col-duur">Duur</th>
+                        <th class="weg-col-duur">Duur (min)</th>
                         <th class="weg-col-weglengte">Weglengte</th>
                         <th class="weg-col-nu">Nu</th>
 
@@ -44,13 +44,13 @@
                 <tbody>
                     <tr>
                         <td><input type="text" name="naam" value="<?= $this->e($weg->getNaam()) ?>"
-                            onblur="this.form.submit()"></td>
-                        <td><input type="text" name="locatie" value="<?= $this->e($weg->getLocatie()) ?>"
-                            pattern="[^0-9]*" title="Geen cijfers toegestaan" onblur="this.form.submit()"></td>
+                                onblur="this.form.submit()"></td>
+                        <td><input type="text" name="locatie" value="<?= $this->e($weg->getLocatie()) ?>" pattern="[^0-9]*"
+                                title="Geen cijfers toegestaan" onblur="this.form.submit()"></td>
                         <td><input type="number" name="strooiduur" value="<?= $weg->getStrooiduur() ?>" min="0" step="1"
-                            onblur="this.form.submit()"></td>
+                                onblur="this.form.submit()"></td>
                         <td><input type="number" name="weglengte" value="<?= $weg->getWeglengte() ?>" min="0" step="1"
-                            onblur=" this.form.submit()"></td>
+                                onblur=" this.form.submit()"></td>
                         <td>
                             <span class="temp-badge">
                                 <?= $weg->getHuidigeTemperatuur() !== null ? number_format($weg->getHuidigeTemperatuur(), 1) : '--' ?>°C
