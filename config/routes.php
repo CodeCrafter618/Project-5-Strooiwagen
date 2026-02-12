@@ -1,6 +1,6 @@
 <?php
 use App\Controllers\HomeController;
-use App\Controllers\InstellingenController;
+
 use App\Controllers\ProductController;
 use App\Controllers\WegenController;
 use League\Route\Router;
@@ -17,5 +17,5 @@ return function (Router $router) {
     $router->post("/wegen/edit/{id:number}", [WegenController::class, "update"]);
     $router->post("/wegen/delete/{id:number}", [WegenController::class, "delete"]);
 
-    $router->get("/instellingen", [InstellingenController::class, "Instellingen"]);
+
 };
