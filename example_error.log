@@ -1,0 +1,145 @@
+[03-Feb-2026 17:49:26 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(63): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:29:36 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:29:41 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:29:41 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:30:01 UTC] PDOException: could not find driver in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\PDO\PDOConnect.php:28
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\PDO\PDOConnect.php(28): PDO::connect('mysql:host=loca...', 'root', Object(SensitiveParameterValue), Array)
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\PDO\MySQL\Driver.php(45): Doctrine\DBAL\Driver\PDO\MySQL\Driver->doConnect(Object(SensitiveParameterValue), 'root', Object(SensitiveParameterValue), Array)
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(222): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect(Object(SensitiveParameterValue))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(241): Doctrine\DBAL\Connection->connect()
+#4 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\AbstractMySQLDriver.php(39): Doctrine\DBAL\Connection->getServerVersion()
+#5 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(196): Doctrine\DBAL\Driver\AbstractMySQLDriver->getDatabasePlatform(Object(Doctrine\DBAL\Connection))
+#6 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(740): Doctrine\DBAL\Connection->getDatabasePlatform()
+#7 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(550): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#8 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(178): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#9 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(318): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#10 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(187): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata('App\\Entities\\Pr...')
+#11 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(224): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor('App\\Entities\\Pr...')
+#12 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Repository\DefaultRepositoryFactory.php(28): Doctrine\ORM\EntityManager->getClassMetadata('App\\Entities\\Pr...')
+#13 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(499): Doctrine\ORM\Repository\DefaultRepositoryFactory->getRepository(Object(Doctrine\ORM\EntityManager), 'App\\Entities\\Pr...')
+#14 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\Controllers\ProductController.php(30): Doctrine\ORM\EntityManager->getRepository('App\\Entities\\Pr...')
+#15 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(48): App\Controllers\ProductController->index(Object(GuzzleHttp\Psr7\ServerRequest), Array)
+#16 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Route.php(124): League\Route\Strategy\ApplicationStrategy->invokeRouteCallable(Object(League\Route\Route), Object(GuzzleHttp\Psr7\ServerRequest))
+#17 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): League\Route\Route->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#18 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(37): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#19 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): Psr\Http\Server\MiddlewareInterface@anonymous->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#20 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(53): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#21 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#22 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#23 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#24 {main}
+
+Next Doctrine\DBAL\Driver\PDO\Exception: could not find driver in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\PDO\Exception.php:24
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\PDO\MySQL\Driver.php(52): Doctrine\DBAL\Driver\PDO\Exception::new(Object(PDOException))
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(222): Doctrine\DBAL\Driver\PDO\MySQL\Driver->connect(Object(SensitiveParameterValue))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(241): Doctrine\DBAL\Connection->connect()
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\AbstractMySQLDriver.php(39): Doctrine\DBAL\Connection->getServerVersion()
+#4 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(196): Doctrine\DBAL\Driver\AbstractMySQLDriver->getDatabasePlatform(Object(Doctrine\DBAL\Connection))
+#5 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(740): Doctrine\DBAL\Connection->getDatabasePlatform()
+#6 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(550): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#7 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(178): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#8 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(318): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#9 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(187): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata('App\\Entities\\Pr...')
+#10 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(224): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor('App\\Entities\\Pr...')
+#11 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Repository\DefaultRepositoryFactory.php(28): Doctrine\ORM\EntityManager->getClassMetadata('App\\Entities\\Pr...')
+#12 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(499): Doctrine\ORM\Repository\DefaultRepositoryFactory->getRepository(Object(Doctrine\ORM\EntityManager), 'App\\Entities\\Pr...')
+#13 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\Controllers\ProductController.php(30): Doctrine\ORM\EntityManager->getRepository('App\\Entities\\Pr...')
+#14 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(48): App\Controllers\ProductController->index(Object(GuzzleHttp\Psr7\ServerRequest), Array)
+#15 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Route.php(124): League\Route\Strategy\ApplicationStrategy->invokeRouteCallable(Object(League\Route\Route), Object(GuzzleHttp\Psr7\ServerRequest))
+#16 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): League\Route\Route->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#17 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(37): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#18 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): Psr\Http\Server\MiddlewareInterface@anonymous->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#19 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(53): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#20 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#21 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#22 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#23 {main}
+
+Next Doctrine\DBAL\Exception\DriverException: An exception occurred in the driver: could not find driver in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\API\MySQL\ExceptionConverter.php:102
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(1460): Doctrine\DBAL\Driver\API\MySQL\ExceptionConverter->convert(Object(Doctrine\DBAL\Driver\PDO\Exception), NULL)
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(1402): Doctrine\DBAL\Connection->handleDriverException(Object(Doctrine\DBAL\Driver\PDO\Exception), NULL)
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(224): Doctrine\DBAL\Connection->convertException(Object(Doctrine\DBAL\Driver\PDO\Exception))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(241): Doctrine\DBAL\Connection->connect()
+#4 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Driver\AbstractMySQLDriver.php(39): Doctrine\DBAL\Connection->getServerVersion()
+#5 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\dbal\src\Connection.php(196): Doctrine\DBAL\Driver\AbstractMySQLDriver->getDatabasePlatform(Object(Doctrine\DBAL\Connection))
+#6 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(740): Doctrine\DBAL\Connection->getDatabasePlatform()
+#7 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(550): Doctrine\ORM\Mapping\ClassMetadataFactory->getTargetPlatform()
+#8 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Mapping\ClassMetadataFactory.php(178): Doctrine\ORM\Mapping\ClassMetadataFactory->completeIdGeneratorMapping(Object(Doctrine\ORM\Mapping\ClassMetadata))
+#9 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(318): Doctrine\ORM\Mapping\ClassMetadataFactory->doLoadMetadata(Object(Doctrine\ORM\Mapping\ClassMetadata), NULL, false, Array)
+#10 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(187): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->loadMetadata('App\\Entities\\Pr...')
+#11 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(224): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getMetadataFor('App\\Entities\\Pr...')
+#12 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\Repository\DefaultRepositoryFactory.php(28): Doctrine\ORM\EntityManager->getClassMetadata('App\\Entities\\Pr...')
+#13 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\doctrine\orm\src\EntityManager.php(499): Doctrine\ORM\Repository\DefaultRepositoryFactory->getRepository(Object(Doctrine\ORM\EntityManager), 'App\\Entities\\Pr...')
+#14 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\Controllers\ProductController.php(30): Doctrine\ORM\EntityManager->getRepository('App\\Entities\\Pr...')
+#15 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(48): App\Controllers\ProductController->index(Object(GuzzleHttp\Psr7\ServerRequest), Array)
+#16 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Route.php(124): League\Route\Strategy\ApplicationStrategy->invokeRouteCallable(Object(League\Route\Route), Object(GuzzleHttp\Psr7\ServerRequest))
+#17 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): League\Route\Route->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#18 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Strategy\ApplicationStrategy.php(37): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#19 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(59): Psr\Http\Server\MiddlewareInterface@anonymous->process(Object(GuzzleHttp\Psr7\ServerRequest), Object(League\Route\Dispatcher))
+#20 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(53): League\Route\Dispatcher->handle(Object(GuzzleHttp\Psr7\ServerRequest))
+#21 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#22 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#23 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#24 {main}
+[03-Feb-2026 18:30:01 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:30:04 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:30:04 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:30:05 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}
+[03-Feb-2026 18:30:05 UTC] League\Route\Http\Exception\NotFoundException: Not Found in C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php:139
+Stack trace:
+#0 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Dispatcher.php(34): League\Route\Dispatcher->setNotFoundDecoratorMiddleware()
+#1 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\vendor\league\route\src\Router.php(97): League\Route\Dispatcher->dispatchRequest(Object(GuzzleHttp\Psr7\ServerRequest))
+#2 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\src\bootstrap.php(52): League\Route\Router->dispatch(Object(GuzzleHttp\Psr7\ServerRequest))
+#3 C:\Users\julia\OneDrive - Firda\Software Developer\Project 5 Zoutstrooi management\public\index.php(5): require('C:\\Users\\julia\\...')
+#4 {main}

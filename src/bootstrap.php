@@ -2,8 +2,74 @@
 
 declare(strict_types=1);
 
-ini_set("display_errors", 1);
+date_default_timezone_set("Europe/Amsterdam");
 
-$page = $_GET["page"];
+use League\Route\Http\Exception\NotFoundException;
+use GuzzleHttp\Psr7\ServerRequest;
 
-require dirname(__DIR__) . "/{$page}.php";
+use HttpSoft\Emitter\SapiEmitter;
+use League\Route\Router;
+
+use League\Route\Strategy\ApplicationStrategy;
+
+use Dotenv\Dotenv;
+
+
+
+
+
+define("APP_ROOT", dirname(__DIR__));
+
+
+require APP_ROOT . "/vendor/autoload.php";
+$dotenv = Dotenv::createImmutable(APP_ROOT);
+$dotenv->load();
+
+$env = $_ENV["APP_ENV"] ?? "prod";
+
+require $env === "dev"
+    ? APP_ROOT . "/config/errors_dev.php"
+    : APP_ROOT . "/config/errors_prod.php";
+
+$request = ServerRequest::fromGlobals();
+$builder = new DI\ContainerBuilder;
+$builder->addDefinitions(APP_ROOT . "/config/definitions.php");
+
+$builder->useAttributes(true);
+$container = $builder->build();
+
+
+$router = new Router;
+
+$strategy = new ApplicationStrategy;
+$strategy->setContainer($container);
+$router->setStrategy($strategy);
+
+$routes = require APP_ROOT . "/config/routes.php";
+$routes($router);
+
+try {
+    $response = $router->dispatch($request);
+
+
+} catch (NotFoundException $e) {
+
+    http_response_code(404);
+
+    if ($env === "dev") {
+        throw $e;
+    } else {
+
+        require APP_ROOT . "/views/404.html";
+        exit;
+    }
+
+}
+
+
+
+
+$emitter = new SapiEmitter();
+
+$emitter->emit($response);
+
